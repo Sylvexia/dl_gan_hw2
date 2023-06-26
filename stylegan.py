@@ -14,7 +14,7 @@ DATSET = './data/img_align_celeba'
 START_TRAIN_IMG_SIZE = 4
 DEVICE = 'cuda'
 LR = 1e-3
-BATCH_SIZES = [256,256,128,64,32,16]
+BATCH_SIZES = [64,64,32,16,8,4]
 CHANNELS_IMG = 3
 Z_DIm = 512
 W_DIM = 512
@@ -41,18 +41,6 @@ def get_loader(image_size):
         shuffle=True
     )
     return loader, dataset
-
-def check_loader():
-    loader,_ = get_loader(64)
-    cloth,_  = next(iter(loader))
-    _,ax     = plt.subplots(3,3,figsize=(8,8))
-    plt.suptitle('Some real samples')
-    ind = 0
-    for k in range(3):
-        for kk in range(3):
-            ax[k][kk].imshow((cloth[ind].permute(1,2,0)+1)/2)
-            ind +=1
-check_loader()
 
 factors = [1,1,1,1/2,1/4,1/8,1/16,1/32]
 
@@ -413,3 +401,5 @@ for num_epochs in PROGRESSIVE_EPOCHS[step:]:
         )
     generate_examples(gen, step)
     step +=1
+
+torch.save(gen.state_dict(), 'style_gen.pth')
