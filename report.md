@@ -1,5 +1,9 @@
 # 深度學習 作業二
 
+It's recommend to view report.md on github since it contains gif file
+
+[project link:(https://github.com/Sylvexia/dl_gan_hw2)](https://github.com/Sylvexia/dl_gan_hw2)
+
 ## Abstract:
 This project implement basic dcgan and wgan to generate human face.
 
@@ -66,7 +70,7 @@ The code implement gradient penalty as the original paper proposed weight clippi
 
 Acually the word above is just what I've heard from [NTU-Hung-yi Lee WGAN theory intruduction](https://www.youtube.com/watch?v=jNY1WBb8l4U) and [WGAN implementation from scratch (with gradient penalty](https://www.youtube.com/watch?v=pG0QZ7OddX4), I still have no idea what was I saying. I suck at mathematics in general.
 
-The implementation in [WGAN implementation from scratch (with gradient penalty](https://www.youtube.com/watch?v=pG0QZ7OddX4) had a error that might be fixed by me is that, we should sample new data every batch during the critics training. But the result I got doesn't matter that much.
+The implementation in [WGAN implementation from scratch (with gradient penalty)](https://www.youtube.com/watch?v=pG0QZ7OddX4) had a error that might be fixed by me is that, we should sample new data every batch during the critics training. But the result I got doesn't matter that much.
 
 The model architecture is the same otherwise as the dcgan.
 
