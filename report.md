@@ -62,11 +62,13 @@ In the paper, they changed the original Discriminator to critic, when training c
 
 Also WGAN take away the sigmoid layer from critic, so the critic output would not between 0 and 1.
 
-The code implement gradient penalty as the original paper proposed weight clipping, the idea is basically sample true and fake data, the interpolation of the 2 sampled data between them should be close to 1.
+The code implement gradient penalty as the original paper proposed weight clipping, the idea is basically sample true and fake data, the interpolation of the 2 sampled data between them should be close to 1. Also the batch normalization is changed to instance normalization layer, which would not do the normalization accross the batch.
 
 Acually the word above is just what I've heard from [NTU-Hung-yi Lee WGAN theory intruduction](https://www.youtube.com/watch?v=jNY1WBb8l4U) and [WGAN implementation from scratch (with gradient penalty](https://www.youtube.com/watch?v=pG0QZ7OddX4), I still have no idea what was I saying. I suck at mathematics in general.
 
 The implementation in [WGAN implementation from scratch (with gradient penalty](https://www.youtube.com/watch?v=pG0QZ7OddX4) had a error that might be fixed by me is that, we should sample new data every batch during the critics training. But the result I got doesn't matter that much.
+
+The model architecture is the same otherwise as the dcgan.
 
 #### Loss:
 
